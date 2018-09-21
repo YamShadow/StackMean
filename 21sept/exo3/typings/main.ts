@@ -32,14 +32,11 @@ getSources(url)
 
 select.addEventListener(`change`, (e) => {
     let url = `${baseUrl}everything?apikey=${apiKey}&sources=${select.value}`;
-    console.log(url)
     getSources(url)
         .then(
             (res) => {
-                console.log(res);
                 let main = document.getElementsByTagName(`main`)[0];
                 for (let item of res.articles) {
-                    console.log(item);
                     let div = document.createElement(`div`);
                     let h2 = document.createElement(`h2`);
                     h2.textContent = item.title

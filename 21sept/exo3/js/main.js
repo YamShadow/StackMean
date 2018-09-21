@@ -21,14 +21,11 @@ getSources(url)
 })["catch"](function (error) { return console.error(error); });
 select.addEventListener("change", function (e) {
     var url = baseUrl + "everything?apikey=" + apiKey + "&sources=" + select.value;
-    console.log(url);
     getSources(url)
         .then(function (res) {
-        console.log(res);
         var main = document.getElementsByTagName("main")[0];
         for (var _i = 0, _a = res.articles; _i < _a.length; _i++) {
             var item = _a[_i];
-            console.log(item);
             var div = document.createElement("div");
             var h2 = document.createElement("h2");
             h2.textContent = item.title;
